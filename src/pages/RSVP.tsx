@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, TextField, Button, Grid, Card, CardContent, FormControl, InputLabel, Select, MenuItem, Snackbar, Alert, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useForm, Controller } from 'react-hook-form';
-import { useWedding } from '../context/WeddingContext';
+import { useWedding } from '../context/WeddingContext.tsx';
 
 interface RSVPFormData {
   firstName: string;

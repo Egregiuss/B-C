@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Container, Typography, TextField, Button, Card, CardContent, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-import { useWedding } from '../context/WeddingContext';
+import { useWedding } from '../context/WeddingContext.tsx';
 
 const Guestbook: React.FC = () => {
   const [name, setName] = useState('');

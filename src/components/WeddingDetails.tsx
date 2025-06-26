@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, Button } from '@mui/material';
 import { Church, Celebration, Checkroom } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import { useWedding } from '../context/WeddingContext';
+import { useWedding } from '../context/WeddingContext.tsx';
 
 const WeddingDetails: React.FC = () => {
   const { weddingData } = useWedding();

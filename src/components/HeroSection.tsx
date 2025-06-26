@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Parallax } from 'react-parallax';
-import { useWedding } from '../context/WeddingContext';
+import { useWedding } from '../context/WeddingContext.tsx';
 
 const HeroSection: React.FC = () => {
   const { weddingData } = useWedding();

@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import App from './App.tsx';
 import theme from './styles/theme.ts';
-import { WeddingProvider } from './context/WeddingContext';
+import { WeddingProvider } from './context/WeddingContext.tsx';
 import './styles/global.css';
 
 const root = ReactDOM.createRoot(

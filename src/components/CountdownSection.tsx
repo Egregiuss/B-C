@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Container, Grid, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import Countdown from 'react-countdown';
-import { useWedding } from '../context/WeddingContext';
+import { useWedding } from '../context/WeddingContext.tsx';
 
 const CountdownSection: React.FC = () => {
   const { weddingData } = useWedding();
