@@ -1,14 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Gallery from './pages/Gallery';
-import Registry from './pages/Registry';
-import RSVP from './pages/RSVP';
-import Admin from './pages/Admin';
-import FloatingElements from './components/FloatingElements';
-import ScrollToTop from './components/ScrollToTop';
+import Navbar from './components/Navbar.tsx';
+import Home from './pages/Home.tsx';
+import Gallery from './pages/Gallery.tsx';
+import Registry from './pages/Registry.tsx';
+import RSVP from './pages/RSVP.tsx';
+import Admin from './pages/Admin.tsx';
+import FloatingElements from './components/FloatingElements.tsx';
+import ScrollToTop from './components/ScrollToTop.tsx';
 
 function App() {
   return (
