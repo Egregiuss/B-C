@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import App from './App.tsx';
-import theme from './styles/theme';
+import theme from './styles/theme.ts';
 import { WeddingProvider } from './context/WeddingContext';
 import './styles/global.css';
 
