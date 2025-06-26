@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Container, Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, Paper } from '@mui/material';
+import { Box, Typography, Container, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Favorite, Coffee, Diamond } from '@mui/icons-material';
 
@@ -54,101 +54,73 @@ const StorySection: React.FC = () => {
           />
         </motion.div>
 
-        <Timeline position="alternate">
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           {storyEvents.map((event, index) => (
-            <TimelineItem key={event.year}>
-              <TimelineSeparator>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  viewport={{ once: true }}
+            <motion.div
+              key={event.year}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 3, mb: 2 }}>
+                <Box
+                  sx={{
+                    backgroundColor: 'primary.main',
+                    width: 60,
+                    height: 60,
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    flexShrink: 0,
+                  }}
                 >
-                  <TimelineDot
-                    sx={{
-                      backgroundColor: 'primary.main',
-                      width: 60,
-                      height: 60,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: 'white',
-                    }}
-                  >
-                    {event.icon}
-                  </TimelineDot>
-                </motion.div>
-                {index < storyEvents.length - 1 && (
-                  <TimelineConnector
-                    sx={{
-                      backgroundColor: 'primary.light',
-                      width: 3,
-                    }}
-                  />
-                )}
-              </TimelineSeparator>
-              <TimelineContent>
-                <motion.div
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
+                  {event.icon}
+                </Box>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: 'primary.main',
+                    fontFamily: '"Playfair Display", serif',
+                  }}
                 >
-                  <Paper
-                    elevation={3}
-                    sx={{
-                      p: 3,
-                      borderRadius: 3,
-                      background: 'white',
-                      position: 'relative',
-                      '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 20,
-                        [index % 2 === 0 ? 'right' : 'left']: -10,
-                        width: 0,
-                        height: 0,
-                        borderTop: '10px solid transparent',
-                        borderBottom: '10px solid transparent',
-                        [index % 2 === 0 ? 'borderLeft' : 'borderRight']: '10px solid white',
-                      },
-                    }}
-                  >
-                    <Typography
-                      variant="h4"
-                      sx={{
-                        color: 'primary.main',
-                        fontFamily: '"Playfair Display", serif',
-                        mb: 1,
-                      }}
-                    >
-                      {event.year}
-                    </Typography>
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        fontFamily: '"Playfair Display", serif',
-                        mb: 2,
-                        color: 'text.primary',
-                      }}
-                    >
-                      {event.title}
-                    </Typography>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        color: 'text.secondary',
-                        lineHeight: 1.8,
-                      }}
-                    >
-                      {event.description}
-                    </Typography>
-                  </Paper>
-                </motion.div>
-              </TimelineContent>
-            </TimelineItem>
+                  {event.year}
+                </Typography>
+              </Box>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  borderRadius: 3,
+                  background: 'white',
+                  ml: { xs: 0, md: 9 },
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontFamily: '"Playfair Display", serif',
+                    mb: 2,
+                    color: 'text.primary',
+                  }}
+                >
+                  {event.title}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: 'text.secondary',
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {event.description}
+                </Typography>
+              </Paper>
+            </motion.div>
           ))}
-        </Timeline>
+        </Box>
       </Container>
     </Box>
   );
